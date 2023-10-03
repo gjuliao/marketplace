@@ -7,9 +7,10 @@ class CreateProjects < ActiveRecord::Migration[7.0]
       t.string :url
       t.float :price
       t.float :fee
-      t.references :owner, null: false, foreign_key: { to_table: :users }
+      t.references :user, null: false, foreign_key: true, index: true
 
       t.timestamps
     end
+    
   end
 end
