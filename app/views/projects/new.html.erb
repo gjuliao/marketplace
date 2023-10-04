@@ -1,1 +1,22 @@
-<h1>hello world</h1>
+<%= form_with(model: @project, scope: :project, url: projects_path, html: { data: { turbo: false } }) do |form| %>
+
+<%= form.hidden_field :owner_id, value: User.first.id %>
+
+<%= form.label :name %>
+<%= form.text_field :name %>
+
+<%= form.label :built_with %>
+<%= form.text_field :built_with %>
+
+<%= form.label :description %>
+<%= form.text_area :description %>
+
+<%= form.label :url %>
+<%= form.text_field :url %>
+
+<%= form.label :price %>
+<%= form.number_field :price %>
+
+<%= form.submit 'SEND' %>
+
+<% end %>
