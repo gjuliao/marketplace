@@ -31,4 +31,22 @@ RSpec.describe Order, type: :model do
       expect(order.valid?).to be(true)
   end
 
+  it 'Presence of fee' do
+    order = Order.new({
+      value:20,
+      project_id: project.id,
+      client_id: user.id
+    })
+    expect(order.valid?).to be(false)
+end
+
+it 'Presence of value' do
+  order = Order.new({
+    fee: 10,
+    project_id: project.id,
+    client_id: user.id
+  })
+  expect(order.valid?).to be(false)
+end
+
 end
