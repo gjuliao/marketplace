@@ -4,6 +4,10 @@ class ProjectsController < ApplicationController
         @projects = Project.all
     end
 
+    def new
+        @projects = Project.new
+    end
+
     def create
         owner = current_user
         @project = Project.new(project_params.merge(owner_id: owner))
