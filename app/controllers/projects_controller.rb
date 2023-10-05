@@ -1,6 +1,3 @@
-require 'pry'
-
-
 class ProjectsController < ApplicationController
 
     def index
@@ -15,10 +12,11 @@ class ProjectsController < ApplicationController
         @project = Project.new(project_params)
         
         if @project.save
-            redirect_to projects_path, notice: 'Your project has been succesfully added!'
+            flash[:notice] = 'Your project has been succesfully added!'
+            redirect_to projects_path # notice: 'Your project has been succesfully added!'
         else
-            flash.now[:alert] = 'Failed to create project'
-            redirect_to new_project_path
+            flash[:alert] = 'Failed to create project!'
+            redirect_to new_project_path # alert: 'Failed to create project!'
         end
     end
 
