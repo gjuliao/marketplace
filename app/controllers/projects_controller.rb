@@ -4,6 +4,12 @@ class ProjectsController < ApplicationController
         @projects = Project.all
     end
 
+    def show
+        @project = Project.find(params[:id])
+        owner = @project.owner_id
+        @owner = User.find(owner)
+    end
+
     def new
         @projects = Project.new
     end
@@ -25,5 +31,10 @@ class ProjectsController < ApplicationController
     def project_params
         params.require(:project).permit(:name, :built_with, :description, :url, :price, :owner_id)
     end
+
+    # def project_owner_params
+    #     @project = Project.find(params[:id])
+    #     @owner = @project.owner_id
+    # end
 
 end
