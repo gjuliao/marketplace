@@ -3,10 +3,10 @@
     <div class="col-lg-6">
         <div class="card shadow my-3">
             <div class="card-body">
-                <h4 class="card-title"><%= project.name %> - Built with: <%= project.built_with %> </h4>
-                <p class="lead"><%= truncate(project.description, length: 50) %></p>
-                <p class="lead"><%= project.url %></p>
-                <p class="lead"><%= project.price %></p>
+                <h4 class="card-title"><%= link_to project.name, projects_path(project) %> - Built with: <%= project.built_with %> </h4>
+                <p class="lead">Description:<%= truncate(project.description, length: 50) %></p>
+                <p class="lead">Visit page: <%= project.url %></p>
+                <p class="lead">Price: <%= project.price %></p>
             </div>
         </div>
     </div>
