@@ -1,0 +1,7 @@
+<div>
+    <% flash.each do |key, value| %>
+        <% unless value == true %>
+            <%= value %>
+        <% end %>
+    <% end %>
+</div>
