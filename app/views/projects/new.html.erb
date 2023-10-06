@@ -1,22 +1,39 @@
-<%= form_with(model: @project, scope: :project, url: projects_path) do |form| %>
+<div class='col-lg-8 mx-auto mt-4'>
+  <div class="card shadow mb-3">
+    <h4 class="card-title my-4 text-center">Add New Project</h4>
+    <%= form_with(model: @project, scope: :project, url: projects_path) do |form| %>
 
-<%= form.hidden_field :owner_id, value: User.first.id %>
+    <%= form.hidden_field :owner_id, value: User.first.id %>
 
-<%= form.label :name %>
-<%= form.text_field :name %>
+    <div class="col-lg-6 mx-auto my-4">
+        <div class="form-group">
+            <%= form.label :name, class: "my-2" %>
+            <%= form.text_field :name, class: "form-control", required: true %>
+        </div>
 
-<%= form.label :built_with %>
-<%= form.text_field :built_with %>
+        <div class="form-group">
+            <%= form.label :built_with, class: "my-2" %>
+            <%= form.text_field :built_with, class: "form-control", required: true %>
+        </div>
 
-<%= form.label :description %>
-<%= form.text_area :description %>
+        <div class="form-group">
+            <%= form.label :description, class: "my-2" %>
+            <%= form.text_area :description, class: "form-control", required: true %>
+        </div>
 
-<%= form.label :url %>
-<%= form.text_field :url %>
+        <div class="form-group">
+            <%= form.label :url, class: "my-2" %>
+            <%= form.text_field :url, class: "form-control", required: true %>
+        </div>
 
-<%= form.label :price %>
-<%= form.number_field :price %>
+        <div class="form-group">
+            <%= form.label :price, class: "my-2" %>
+            <%= form.number_field :price, class: "form-control", required: true %>
+        </div>
 
-<%= form.submit 'SEND' %>
+        <%= form.submit 'SEND', class: "btn btn-primary btn-lg mt-3" %>
+       </div>
 
-<% end %>
+    <% end %>
+  </div>
+</div>
