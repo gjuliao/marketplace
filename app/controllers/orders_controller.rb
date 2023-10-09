@@ -1,11 +1,9 @@
 class OrdersController < ApplicationController
 
     def create
-        # @client = order_params[:client_id]
-        # @project = order_params[:project_id]
         @order = Order.new(order_params)
         @order.calculate_fee
-        
+
         if @order.save
             flash[:notice] = 'Your Order has been registered Succesfully!'
             redirect_to projects_path

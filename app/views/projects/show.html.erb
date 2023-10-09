@@ -9,6 +9,7 @@
             <%= form_with(model: @order, scope: :order, url: orders_path(@project)) do |form| %>
                 <%= form.hidden_field :client_id, value: @project.owner_id %>
                 <%= form.hidden_field :project_id, value: @project.id %>
+                <%= form.hidden_field :value, value: @project.price %>
                 <%= form.submit 'BUY', class: "btn btn-primary btn-lg mt-3" %>
             <% end %>
     </div>
