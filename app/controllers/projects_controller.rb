@@ -1,4 +1,5 @@
 class ProjectsController < ApplicationController
+    before_action :authenticate_user!
 
     def index
         @projects = Project.all
@@ -11,7 +12,7 @@ class ProjectsController < ApplicationController
     end
 
     def new
-        @current_user = User.first
+        @current_user = current_user
         @projects = Project.new
     end
 

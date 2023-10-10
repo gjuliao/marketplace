@@ -3,7 +3,7 @@
     <h4 class="card-title my-4 text-center">Add New Project</h4>
     <%= form_with(model: @project, scope: :project, url: projects_path) do |form| %>
 
-    <%= form.hidden_field :owner_id, value: @current_user.id %>
+    <%= form.hidden_field :owner_id, value: @current_user %>
 
     <div class="col-lg-6 mx-auto my-4">
         <div class="form-group">
