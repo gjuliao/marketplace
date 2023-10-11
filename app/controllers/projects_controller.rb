@@ -9,6 +9,7 @@ class ProjectsController < ApplicationController
         @project = Project.find(params[:id])
         owner = @project.owner_id
         @owner = User.find(owner)
+        @current_user = current_user
     end
 
     def new
