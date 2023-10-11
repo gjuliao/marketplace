@@ -1,5 +1,10 @@
 <div class="col-lg-6">
     <div class="card shadow my-4">
+    
+                <%= link_to edit_project_description_path(@project), data: { controller: "edit-project-description"} do %>
+                    <i class="bi bi-pencil-fill"></i>
+                <% end %>
+           
             <h4 class="card-title mx-2 my-2"><%= @project.name %> - Built with: <%= @project.built_with %> </h4>
             <div class="card-body mx-2 my-2">
                 <p class="lead">Description:<%= truncate(@project.description, length: 50) %></p>

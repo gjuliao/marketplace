@@ -5,6 +5,14 @@ class ProjectsController < ApplicationController
         @projects = Project.all
     end
 
+    def edit_description
+        @project = Project.find(params[:id])
+        respond_to do |format|
+            format.html { render edit_project_description_path(@project), notice: 'format html response'}
+            format.turbo_stream { render edit_project_description_path(@project), status: :ok, location: @project}
+        end
+    end
+
     def show
         @project = Project.find(params[:id])
         owner = @project.owner_id

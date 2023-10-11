@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   root "projects#index"
 
   resources :projects, only: [:index, :new, :create, :show]
+  get 'edit_description/:id', to: 'projects#edit_description', as: 'edit_project_description'
   resources :orders, only: [:new, :create, :show]
 end

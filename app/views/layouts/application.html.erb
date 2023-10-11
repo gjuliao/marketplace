@@ -19,6 +19,7 @@
     <%= render 'shared/flash' %>
     <div class="row">
       <%= yield %>
+    <%= turbo_frame_tag 'remote_modal' %>
     </div>
   </div>
 

@@ -2,7 +2,7 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 import * as bootstrap from "bootstrap"
+window.bootstrap = bootstrap;
 
 import Rails from “@rails/ujs”
 Rails.start()
-window.bootstrap = bootstrap;
